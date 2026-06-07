@@ -21,10 +21,10 @@
 body{
     min-height:100vh;
     background:linear-gradient(180deg,#ffeef2,#fff6f7);
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
     padding:30px 20px;
     position:relative;
 }
@@ -33,9 +33,11 @@ body{
     width:100%;
     max-width:420px;
     text-align:center;
+
+    margin:0 auto;
+    position:relative;
     z-index:2;
 }
-
 .logo-box{
     width:240px;
     height:240px;
