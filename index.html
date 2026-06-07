@@ -19,22 +19,24 @@
 }
 
 body{
+    margin:0;
+    padding:30px 20px;
     min-height:100vh;
+
     background:linear-gradient(180deg,#ffeef2,#fff6f7);
 
-    overflow-y:auto;
     overflow-x:hidden;
+    overflow-y:scroll;
 
-    padding:30px 20px;
     position:relative;
+    touch-action:pan-y;
+    -webkit-overflow-scrolling:touch;
 }
-
 .container{
     width:100%;
     max-width:420px;
-    text-align:center;
-
     margin:0 auto;
+    text-align:center;
     position:relative;
     z-index:2;
 }
