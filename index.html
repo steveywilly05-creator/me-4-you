@@ -35,8 +35,6 @@ body{
     padding:30px 20px;
 
     position:relative;
-
-    touch-action:pan-y;
     -webkit-overflow-scrolling:touch;
 }
 .container{
@@ -143,10 +141,15 @@ button{
 .heart{
     position:fixed;
     color:#ff5c8d;
-    animation:float linear infinite;
     opacity:0.7;
 
+    animation:float linear infinite;
+
     pointer-events:none;
+
+    user-select:none;
+    -webkit-user-select:none;
+
     z-index:1;
 }
 
@@ -221,24 +224,28 @@ function sayYes(){
 
 const noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("mouseover", () => {
+function moveButton(){
 
     noBtn.style.position = "absolute";
-
     noBtn.style.left = Math.random() * 220 + "px";
     noBtn.style.top = Math.random() * 120 + "px";
-});
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("touchstart", moveButton););
 
 for(let i = 0; i < 20; i++){
 
-    let heart = document.createElement("div");
+    const heart = document.createElement("div");
 
-    heart.classList.add("heart");
+    heart.className = "heart";
     heart.innerHTML = "❤️";
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (Math.random() * 25 + 15) + "px";
     heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+
+    heart.style.pointerEvents = "none";
 
     document.body.appendChild(heart);
 }
