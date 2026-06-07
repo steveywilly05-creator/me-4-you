@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Lusanda ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(180deg,#ffeef2,#fff6f7);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 20px;
+    position:relative;
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+    text-align:center;
+    z-index:2;
+}
+
+.logo-box{
+    width:240px;
+    height:240px;
+    margin:0 auto 35px;
+    border-radius:35px;
+    overflow:hidden;
+    background:white;
+    border:5px solid #ffd1dc;
+    box-shadow:0 10px 35px rgba(255,182,193,0.45);
+}
+
+.logo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.title{
+    font-size:38px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:18px;
+    line-height:1.3;
+}
+
+.subtitle{
+    font-size:18px;
+    color:#555;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.card{
+    background:white;
+    border-radius:35px;
+    padding:35px 25px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    font-size:30px;
+    margin-bottom:15px;
+    color:#111;
+}
+
+.card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    position:relative;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    border-radius:999px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.yes{
+    background:#ff4f87;
+    color:white;
+}
+
+.yes:hover{
+    transform:scale(1.08);
+}
+
+.no{
+    background:#ececec;
+    color:#111;
+}
+
+.success{
+    margin-top:25px;
+    font-size:24px;
+    color:#ff4f87;
+    font-weight:600;
+    display:none;
+    line-height:1.5;
+}
+
+.heart{
+    position:absolute;
+    color:#ff5c8d;
+    animation:float linear infinite;
+    opacity:0.7;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120px);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Replace yourimage.jpeg with your uploaded photo -->
+    <div class="logo-box">
+        <img src="yourimage.jpeg" alt="Us">
+    </div>
+
+    <div class="title">
+        To my favourite big forehead person,<br>
+        Lusanda ❤️
+    </div>
+
+    <div class="subtitle">
+        Every moment with you has become one of my favourite parts of life.
+        You make me smile without even trying, and I honestly can't imagine
+        anyone else I'd rather share my time with.
+    </div>
+
+    <div class="card">
+
+        <h2>Will you be my girlfriend? ❤️</h2>
+
+        <p>
+            Officially. Properly. Exclusively.<br>
+            I choose you today, tomorrow, and every day after that.
+        </p>
+
+        <div class="buttons">
+
+            <button class="yes" onclick="sayYes()">
+                Yes ❤️
+            </button>
+
+            <button class="no" id="noBtn">
+                No
+            </button>
+
+        </div>
+
+        <div class="success" id="successText">
+            YAYYY!! ❤️<br>
+            You just made me the happiest person alive, Lusanda ❤️
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function sayYes(){
+    document.getElementById("successText").style.display="block";
+}
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+
+    noBtn.style.position = "absolute";
+
+    noBtn.style.left = Math.random() * 220 + "px";
+    noBtn.style.top = Math.random() * 120 + "px";
+});
+
+for(let i = 0; i < 20; i++){
+
+    let heart = document.createElement("div");
+
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 4 + 4) + "s";
+
+    document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
